@@ -1,11 +1,17 @@
-# Default ignored files
-/shelf/
-/.idea/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
+nodejs-consumer/node_modules/
+nodejs-producer/node_modules/
 
-.gitignore
-.idea
+nodejs-consumer/package-lock.json
+nodejs-producer/package-lock.json
+
+spark-streaming/scala/target/
+spark-streaming/scala/.vscode/
+spark-streaming/scala/.metals/
+spark-streaming/scala/.bloop/
+
+jars_dir/
+
+.vscode/
+.metals/
+
+venv/
