@@ -15,4 +15,7 @@ jars_dir/
 .metals/
 
 venv/
-.idea
+.idea/
+target
+.bsp
+project

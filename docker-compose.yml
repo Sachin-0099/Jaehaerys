@@ -1,4 +1,4 @@
-version: "3.4"
+#version: "4"
 
 
 networks:
@@ -27,6 +27,7 @@ services:
   kafka:
     image: docker.io/bitnami/kafka:3
     container_name: kafka
+    platform: linux/amd64
     ports:
       - "9092:9092"
       - "9093:9093"
@@ -47,6 +48,7 @@ services:
 
   spark:
     image: docker.io/bitnami/spark:3
+    platform: linux/amd64
     container_name: spark
     environment:
       - SPARK_MODE=master
@@ -67,6 +69,7 @@ services:
   spark-worker-1:
     image: docker.io/bitnami/spark:3
     container_name: spark-worker-1
+    platform: linux/amd64
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
@@ -83,6 +86,7 @@ services:
   spark-worker-2:
     image: docker.io/bitnami/spark:3
     container_name: spark-worker-2
+    platform: linux/amd64
     environment:
       - SPARK_MODE=worker
       - SPARK_MASTER_URL=spark://spark:7077
@@ -98,52 +102,14 @@ services:
 
   spark-streaming-scala:
     container_name: spark-streaming-scala
-    image: docker.io/mdiakhate12/spark-kafka-streaming
+    platform: linux/amd64
+    build:
+      context: ./spark-streaming/scala
     networks:
       kafka-spark:
         ipv4_address: 192.168.1.13
     volumes:
       - ./jars_dir:/usr/src/app/target/scala-2.12/
-
-#  nodejs-producer:
-#    container_name: nodejs-producer
-#    image: docker.io/mdiakhate12/nodejs-producer-kafka
-#    platform: linux/amd64
-#    networks:
-#      kafka-spark:
-#        ipv4_address: 192.168.1.14
-#    depends_on:
-#      - kafka
-
-#  nodejs-consumer:
-#    container_name: nodejs-consumer
-#    image: docker.io/mdiakhate12/nodejs-consumer-kafka
-#    platform: linux/amd64
-#    networks:
-#      kafka-spark:
-#        ipv4_address: 192.168.1.15
-#    depends_on:
-#      - kafka
-
-#  python-producer:
-#    container_name: python-producer
-#    image: docker.io/mdiakhate12/python-producer-kafka
-#    platform: linux/amd64
-#    networks:
-#      kafka-spark:
-#        ipv4_address: 192.168.1.16
-#    depends_on:
-#      - kafka
-
-  python-consumer:
-    container_name: python-consumer
-    image: docker.io/mdiakhate12/python-consumer-kafka
-    platform: linux/amd64
-    networks:
-      kafka-spark:
-        ipv4_address: 192.168.1.17
-    depends_on:
-      - kafka
 
   kafka-ui:
     image: provectuslabs/kafka-ui
