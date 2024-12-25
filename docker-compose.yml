@@ -47,8 +47,10 @@ services:
       - zookeeper
 
   spark:
-    image: docker.io/bitnami/spark:3
+#    image: docker.io/bitnami/spark:3
     platform: linux/amd64
+    build:
+      context: ./spark
     container_name: spark
     environment:
       - SPARK_MODE=master
@@ -67,8 +69,10 @@ services:
       - spark-streaming-scala
 
   spark-worker-1:
-    image: docker.io/bitnami/spark:3
+#    image: docker.io/bitnami/spark:3
     container_name: spark-worker-1
+    build:
+      context: ./spark
     platform: linux/amd64
     environment:
       - SPARK_MODE=worker
@@ -84,7 +88,9 @@ services:
         ipv4_address: 192.168.1.11
 
   spark-worker-2:
-    image: docker.io/bitnami/spark:3
+#    image: docker.io/bitnami/spark:3
+    build:
+      context: ./spark
     container_name: spark-worker-2
     platform: linux/amd64
     environment:
