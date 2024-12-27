@@ -8,10 +8,11 @@
 		<version>3.4.1</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.jaehaerys.hl7tranfromer</groupId>
-	<artifactId>hl7tranfromer</artifactId>
+	<groupId>com.jaehaerys</groupId>
+	<artifactId>jaehaerys</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>hl7tranfromer</name>
+	<packaging>pom</packaging>
+	<name>jaehaerys</name>
 	<description>segregate hl7</description>
 	<url/>
 	<licenses>
@@ -20,6 +21,9 @@
 	<developers>
 		<developer/>
 	</developers>
+	<modules>
+		<module>hl7Processor</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>
