@@ -1,21 +1,32 @@
-nodejs-consumer/node_modules/
-nodejs-producer/node_modules/
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
 
-nodejs-consumer/package-lock.json
-nodejs-producer/package-lock.json
+### STS ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
 
-spark-streaming/scala/target/
-spark-streaming/scala/.vscode/
-spark-streaming/scala/.metals/
-spark-streaming/scala/.bloop/
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
 
-jars_dir/
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
 
+### VS Code ###
 .vscode/
-.metals/
-
-venv/
-.idea/
-target
-.bsp
-project
