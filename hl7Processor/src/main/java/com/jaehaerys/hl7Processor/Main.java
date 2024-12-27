@@ -1,4 +1,4 @@
-package com.jaehaerys;
+package com.jaehaerys.hl7Processor;
 
 public class Main {
     public static void main(String[] args) {
