@@ -12,4 +12,4 @@ mvn clean install
 
 # Run SonarQube analysis
 mvn clean verify sonar:sonar \
-  -Dsonar.login=sqa_b4b04c081f2a5d6f3357c5e97b5ccba94fd82847
+  -Dsonar.login=sqa_5632e7f7632bfd140f3c0789b7a1da365ee5b6f7
